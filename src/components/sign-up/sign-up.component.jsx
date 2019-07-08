@@ -18,6 +18,7 @@ class SignUp extends Component {
       confirmPassword: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
   async handleSubmit(e) {
     e.preventDefault();
@@ -42,10 +43,10 @@ class SignUp extends Component {
       console.error(err);
     }
   }
-  handleChange = e => {
+  handleChange(e) {
     const { name, value } = e.target;
     this.setState({ [name]: value });
-  };
+  }
   render() {
     const { displayName, email, password, confirmPassword } = this.state;
     return (
